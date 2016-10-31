@@ -31,3 +31,4 @@ bower_components
 # IDE
 /.idea
 *.sublime-*
+bower.json
