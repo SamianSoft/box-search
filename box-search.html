@@ -7,7 +7,7 @@
 <dom-module id="box-search">
     <template>
         <style>
-            .clear{
+            .boxclearbutton{
                 opacity: 0.1;
                 transition: all ease-out 500ms;
             }
@@ -19,7 +19,7 @@
         <paper-input id="boxsearch" on-focus="showClearButt">
             <iron-icon icon="search" prefix></iron-icon>
             <div class="bxshldplc">Search...</div>
-            <paper-icon-button suffix on-tap="clearInput" icon="clear" id="clearButt" alt="clear" title="clear" class="clear">
+            <paper-icon-button suffix on-tap="clearInput" icon="clear" id="clearButt" alt="clear" title="clear" class="boxclearbutton">
             </paper-icon-button>
         </paper-input>
 
