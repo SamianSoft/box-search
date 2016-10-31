@@ -5,36 +5,39 @@
 <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html"/>
 
 <dom-module id="box-search">
-  <template>
-    <style>
-      .clear{
-        opacity: 0.1;
-        transition: all ease-out 500ms;
-      }
-    </style>
+    <template>
+        <style>
+            .clear{
+                opacity: 0.1;
+                transition: all ease-out 500ms;
+            }
+            .bxshldplc{
 
-    <paper-input id="boxsearch" id="box-search" on-focus="showClearButt">
-    <iron-icon icon="search" prefix></iron-icon>
-    <div suffix>Search...</div>
-    <paper-icon-button suffix on-tap="clearInput" icon="clear" id="clearButt" alt="clear" title="clear" class="clear">
-    </paper-icon-button>
-    </paper-input>
+            }
+        </style>
+
+        <paper-input id="boxsearch" id="box-search" on-focus="showClearButt">
+            <iron-icon icon="search" prefix></iron-icon>
+            <div class="bxshldplc">Search...</div>
+            <paper-icon-button suffix on-tap="clearInput" icon="clear" id="clearButt" alt="clear" title="clear" class="clear">
+            </paper-icon-button>
+        </paper-input>
 
 
-  </template>
+    </template>
 
-  <script>
-    
-    Polymer({
-      is: 'box-search',
-      showClearButt: function(){
-      this.$.clearButt.style.opacity = 1;
-      },
-      clearInput:function(){
-      this.$.boxsearch.value = "";
-    }
+    <script>
 
-    });
+        Polymer({
+            is: 'box-search',
+            showClearButt: function(){
+                this.$.clearButt.style.opacity = 1;
+            },
+            clearInput:function(){
+                this.$.boxsearch.value = "";
+            }
 
-  </script>
+        });
+
+    </script>
 </dom-module>
