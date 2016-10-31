@@ -1,34 +1,48 @@
-<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="bower_components/polymer/polymer.html" />
+<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html" />
+<link rel="import" href="bower_components/paper-input/paper-input.html" />
+<link rel="import" href="bower_components/iron-icons/iron-icons.html"/>
+<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html"/>
 
-<!--
-`box-search`
-
-
-@demo demo/index.html 
--->
-
-<dom-module id="box-search">
+<dom-module id="box-search-element">
   <template>
     <style>
-      :host {
-        display: block;
+      .clear{
+        
+        opacity: 0.1;
+        transition: all ease-out 500ms;
       }
+      
+      
     </style>
-    <h2>Hello [[prop1]]</h2>
+
+
+    <paper-input id="boxsearch" id="box-search" on-focus="showClearButt">
+    <iron-icon icon="search" prefix></iron-icon>
+    <div suffix>Search...</div>
+    <paper-icon-button suffix on-tap="clearInput" icon="clear" id="clearButt" alt="clear" title="clear" class="clear">
+    </paper-icon-button>
+    </paper-input>
+
+
   </template>
 
   <script>
+    
     Polymer({
-
-      is: 'box-search',
-
-      properties: {
-        prop1: {
-          type: String,
-          value: 'box-search',
-        },
+      is: 'box-search-element',
+      
+      showClearButt: function(){
+      this.$.clearButt.style.opacity = 1;
       },
-
+      clearInput:function(){
+      this.$.boxsearch.value = "";
+    }
+      
     });
+    
+    
+    
+    
   </script>
 </dom-module>
