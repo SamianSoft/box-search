@@ -1,34 +1,52 @@
-<link rel="import" href="../polymer/polymer.html"/>
-
-<!--
-`box-search`
-
-
-@demo demo/index.html 
--->
+<link rel="import" href="bower_components/polymer/polymer.html" />
+<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html" />
+<link rel="import" href="bower_components/paper-input/paper-input.html" />
+<link rel="import" href="bower_components/iron-icons/iron-icons.html"/>
+<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html"/>
 
 <dom-module id="box-search">
-  <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-    <h2>Hello [[prop1]]</h2>
-  </template>
+	<template>
+		<style>
+			.boxclearbutton{
+				opacity: 0;
+				position: absolute;
+				top: -10px;
+				right: -50px;
+				transition: all ease-out 300ms;
+			}
+			#boxsearch{
+				position: relative;
+			}
+		</style>
 
-  <script>
-    Polymer({
+		<paper-input id="boxsearch" on-focus="showClearButt" on-blur="hideClearButt" value="" placeholder="Search ... ">
+			<iron-icon icon="search" prefix></iron-icon>
+			<paper-icon-button on-tap="clearInput" icon="clear" id="clearButt" alt="clear" title="clear" class="boxclearbutton" suffix>
+			</paper-icon-button>
+		</paper-input>
 
-      is: 'box-search',
 
-      properties: {
-        prop1: {
-          type: String,
-          value: 'box-search',
-        },
-      },
+	</template>
 
-    });
-  </script>
+	<script>
+
+		Polymer({
+			is: 'box-search',
+			showClearButt: function(){
+				this.$.clearButt.style.opacity = "1";
+				this.$.clearButt.style.right = "5px";
+			},
+			hideClearButt: function(){
+				this.$.clearButt.style.opacity = "0";
+				this.$.clearButt.style.right = "-50px";
+			},
+			clearInput: function(){
+				this.$.boxsearch.value = "";
+				this.$.clearButt.style.opacity = "0";
+
+			}
+
+		});
+
+	</script>
 </dom-module>
