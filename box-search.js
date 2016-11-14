@@ -11,17 +11,17 @@
 			}
 		}
 
-		showClearButt (){
+		showClearButt () {
 			this.$.clearButt.style.opacity = "1";
 			this.$.clearButt.style.right = "5px";
 		}
 
-		hideClearButt (){
+		hideClearButt () {
 			this.$.clearButt.style.opacity = "0";
 			this.$.clearButt.style.right = "-50px";
 		}
 
-		clearInput (){
+		clearInput () {
 			this.$.boxsearch.value = "";
 			this.$.clearButt.style.opacity = "0";
 
